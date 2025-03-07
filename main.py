@@ -6,7 +6,7 @@ from transformers import pipeline
 app = FastAPI()
 
 # بارگذاری مدل خلاصه‌سازی
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 class ArticleRequest(BaseModel):
     text: str
