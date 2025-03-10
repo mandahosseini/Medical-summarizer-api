@@ -12,7 +12,7 @@ class ArticleRequest(BaseModel):
     text: str
 
 @app.post("/summarize/")
- async def summarize(article: ArticleRequest):
+    async def summarize(article: ArticleRequest):
     summary = summarizer(article.text, max_length=150, min_length=50, do_sample=False)
     return {"summary": summary[0]["summary_text"]}
 
