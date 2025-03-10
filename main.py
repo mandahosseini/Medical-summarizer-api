@@ -13,7 +13,7 @@ class ArticleRequest(BaseModel):
     text: str
 
 # تعریف مسیر API برای خلاصه‌سازی متن
-@app.post("/summarize/")
+@app.post("/summarize")
 async def summarize(article: ArticleRequest):
     summary = summarizer(article.text, max_length=150, min_length=50, do_sample=False)
     return {"summary": summary[0]["summary_text"]}
